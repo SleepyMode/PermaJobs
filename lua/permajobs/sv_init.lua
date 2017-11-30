@@ -10,7 +10,7 @@ if !sql.TableExists("permajobs_data") then
 end
 
 function PLAYER:GetPermaJob()
-	return sql.Query("SELECT Job FROM permajobs_data WHERE SteamID='"..self:SteamID()"'")
+	return sql.QueryValue("SELECT Job FROM permajobs_data WHERE SteamID='"..self:SteamID()"'")
 end
 
 function PLAYER:SetPermaJob(Job)
